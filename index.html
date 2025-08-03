@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PushNPull</title>
+		<link rel="stylesheet" href="/style/style.css" />
+		<link
+			rel="shortcut icon"
+			href="/images/PushNPull-logo.png"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="/codemirror/lib/codemirror.css" />
+		<link rel="stylesheet" href="/codemirror/theme/mdn-like.css" />
+	</head>
+	<body>
+		<nav>
+			<img src="/images/PushNPull-logo.png" height="34" width="36" />
+			<h2 class="name-h2">PushNPull</h2>
+		</nav>
+		<div class="container">
+			<div class="req-res-full-div">
+				<div class="url-form">
+					<select class="select-method">
+						<option value="get">GET</option>
+						<option value="post">POST</option>
+						<option value="put">PUT</option>
+						<option value="delete">DELETE</option>
+						<option value="patch">PATCH</option>
+						<option value="head">HEAD</option>
+					</select>
+					<input
+						class="url-input"
+						type="url"
+						autofocus
+						placeholder="Enter URL"
+					/>
+					<button class="url-send">SEND</button>
+				</div>
+				<div class="header-body-full-div">
+					<div class="header-body-auth-div">
+						<h3 class="header-h3">Header</h3>
+						<h3 class="body-h3">Body</h3>
+						<h3 class="auth-h3">Authorization</h3>
+					</div>
+					<div class="header-div">
+						<button class="button button-1" type="button">
+							<span class="button__text">Add Headers</span>
+							<span class="button__icon"
+								><svg
+									class="svg"
+									fill="none"
+									height="20"
+									stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									viewBox="0 0 24 24"
+									width="20"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<line x1="12" x2="12" y1="5" y2="19"></line>
+									<line
+										x1="5"
+										x2="19"
+										y1="12"
+										y2="12"
+									></line></svg
+							></span>
+						</button>
+						<form class="header-form header-form-1">
+							<input type="text" placeholder="key" />
+							<input type="text" placeholder="value" />
+							<img
+								src="/images/bin.png"
+								height="20"
+								style="visibility: hidden"
+							/>
+						</form>
+					</div>
+					<div class="auth-div">
+						<div class="selecting-auth-div">
+							<form class="selecting-auth-form">
+								<select class="selecting-auth">
+									<option value="no-auth">No Auth</option>
+									<option value="basic-auth">
+										Basic Auth
+									</option>
+									<option value="bearer">Bearer Token</option>
+								</select>
+							</form>
+						</div>
+						<div class="no-auth-data-div">
+							<h4 class="no-auth-h4">NO Auth</h4>
+							<p class="no-auth-p">
+								This request is made without any authorization.
+							</p>
+						</div>
+						<div class="bearer-auth-div">
+							<p>Provide your Bearer Token for authentication.</p>
+							<input
+								class="bearer-input"
+								type="text"
+								placeholder="Token"
+							/>
+						</div>
+						<div class="basic-auth-div">
+							<input type="text" placeholder="Username" />
+							<input type="password" placeholder="Password" />
+						</div>
+					</div>
+					<div class="body-div">
+						<div class="select-body-div">
+							<div>
+								<input
+									class="radio-pointer"
+									value="none"
+									type="radio"
+									id="none"
+									name="body-type"
+									checked
+								/>
+								<label class="radio-pointer" for="none"
+									>none</label
+								>
+							</div>
+							<div>
+								<input
+									class="radio-pointer"
+									value="form-data"
+									type="radio"
+									id="form-data"
+									name="body-type"
+								/>
+								<label class="radio-pointer" for="form-data"
+									>form-data</label
+								>
+							</div>
+							<div>
+								<input
+									class="radio-pointer"
+									value="raw"
+									type="radio"
+									id="raw"
+									name="body-type"
+								/>
+								<label class="radio-pointer" for="raw"
+									>raw</label
+								>
+							</div>
+						</div>
+						<div class="body-data-div body-data-div-2">
+							<button class="button button2" type="button">
+								<span class="button__text">Add Headers</span>
+								<span class="button__icon"
+									><svg
+										class="svg"
+										fill="none"
+										height="20"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										viewBox="0 0 24 24"
+										width="20"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<line
+											x1="12"
+											x2="12"
+											y1="5"
+											y2="19"
+										></line>
+										<line
+											x1="5"
+											x2="19"
+											y1="12"
+											y2="12"
+										></line></svg
+								></span>
+							</button>
+							<form class="header-form header-form-2">
+								<input type="text" placeholder="key" />
+								<input type="text" placeholder="value" />
+								<img
+									src="/images/bin.png"
+									height="20"
+									style="visibility: hidden"
+								/>
+							</form>
+						</div>
+						<div class="body-raw-data-div">
+							<textarea
+								class="body-editor"
+								name="body-data"
+							></textarea>
+							<select
+								name="body-raw-format"
+								class="body-raw-select"
+							>
+								<option value="json">JSON</option>
+								<option value="text">Text</option>
+								<option value="xml">XML</option>
+								<option value="html">HTML</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="response-status-full-div">
+					<div class="status-full-div">
+						<div class="body-header-div">
+							<h2 class="response-body">Body</h2>
+							<h2 class="response-header">Headers</h2>
+						</div>
+						<div class="status-div">
+							<div>
+								<h4 class="status-code"></h4>
+								<h4 class="status-text">status</h4>
+							</div>
+							<div>
+								<h4 class="time">0.0</h4>
+								<h4>ms</h4>
+							</div>
+							<div>
+								<h4 class="size">0.0</h4>
+								<h4>bytes</h4>
+							</div>
+						</div>
+					</div>
+					<div class="response-editor-div">
+						<textarea
+							class="response-editor"
+							name="response-data"
+						></textarea>
+					</div>
+					<div class="response-header-table-div">
+						<table class="response-header-table" border="1">
+							<thead>
+								<tr>
+									<th scope="col">Key</th>
+									<th scope="col">Value</th>
+								</tr>
+							</thead>
+							<tbody class="header-tbody">
+								<tr class="tr-remove">
+									<td>--</td>
+									<td>--</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="history-full-div">
+				<div class="history-heading-div">
+					<h2>HISTORY</h2>
+				</div>
+				<div class="history-datas-div"></div>
+			</div>
+		</div>
+		<script src="/codemirror/lib/codemirror.js"></script>
+		<script src="/codemirror/mode/javascript/javascript.js"></script>
+		<script src="/javascript/connection.js"></script>
+		<script src="/javascript/app.js"></script>
+	</body>
+</html>
